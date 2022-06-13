@@ -1,16 +1,19 @@
-import React, { Component } from 'react';
+// configureStore.js
 
-class configureStore extends Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import logger from 'redux-logger';
+import booksReducer from './Books/books';
+import categoryReducer from './Categories/categories';
 
-  render() {
-    return (
-      <div />
-    );
-  }
-}
+const reducer = combineReducers({
+  booksReducer,
+  categoryReducer,
+  // additional reducers could be added here
+});
 
-export default configureStore;
+const store = createStore(
+  reducer,
+  applyMiddleware(logger),
+);
+
+export default store;
