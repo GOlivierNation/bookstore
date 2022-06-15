@@ -28,47 +28,20 @@
 
 
 ## Getting Started
-
-### Clone this repository
-
-- To get the content of this project locally you need to run this command in your terminal:
-
-```bash
-$ git clone https://github.com/GOlivierNation/bookstore.git
-$ cd bookstore
-```
-### Run project
-
-- After cloning the project you need to run this command
-
-```bash
-$ npm run start 
-```
-
-- Initialise React app.
-
-```bash
-$ npx create-react-app bookstore  
-```
-
-
-- Add React Redux.
-
-```bash
-$ npm install react-redux
-```
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-
-- Setup React Router
-
-
-```bash
-$ npm install react-router-dom 
-```
-
+- clone the repository by running\
+    `git clone https://github.com/aimemalaika/book-store.git`
+- navigate to the folder\
+    `cd book-store`
+- Install packages\
+    `npm install`
+- Run the app\
+    `npm start`
+- Eject the app\
+    `npm run eject`
+- Create build app\
+    `npm run build`
+- Test Linters app\
+    `npm run check-linters
 > To use the Router component provided to wrap your components and associate them with a path.
 
 -  Compiled SASS to CSS:

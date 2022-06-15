@@ -1,16 +1,13 @@
-import React, { Component } from 'react';
+import { createStore, combineReducers } from 'redux';
+import bookReducer from './books/books';
 
-class configureStore extends Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
+import categoriesReducer from './categories/categories';
 
-  render() {
-    return (
-      <div />
-    );
-  }
-}
+const reducers = {
+  addBook: bookReducer,
+  checkCategory: categoriesReducer,
+};
 
-export default configureStore;
+const store = createStore(combineReducers(reducers));
+
+export default store;

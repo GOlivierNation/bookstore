@@ -1,18 +1,19 @@
-import React, { Component } from 'react';
+const CHECK_STATUS = 'COMPLETED';
+const initialState = [];
 
-class Categories extends Component {
-  constructor() {
-    super();
-    this.state = {};
+// actions' creator
+export const checkStatus = () => ({
+  type: CHECK_STATUS,
+  payload: 'completed',
+});
+
+const categoriesReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case CHECK_STATUS:
+      return 'Under construction';
+    default:
+      return state;
   }
+};
 
-  render() {
-    return (
-      <>
-        <h1>Under construction</h1>
-      </>
-    );
-  }
-}
-
-export default Categories;
+export default categoriesReducer;

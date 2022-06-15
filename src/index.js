@@ -1,18 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Books from './redux/books/books';
-import Categories from './redux/categories/categories';
-import './style.css';
+import ReactDOM from 'react-dom/client';
+import App from './App';
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
   <React.StrictMode>
-    <Router>
-      <Routes>
-        <Route path="/" exact element={<Books />} />
-        <Route path="/categories" exact element={<Categories />} />
-      </Routes>
-    </Router>
+    <App />
   </React.StrictMode>,
-  document.getElementById('root'),
 );
