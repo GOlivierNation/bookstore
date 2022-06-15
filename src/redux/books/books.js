@@ -1,27 +1,55 @@
-const ADD_BOOK = 'ADD_BOOK';
-const REMOVE_BOOK = 'REMOVE_BOOK';
+const ADD_BOOK = 'bookstore/books/ADD_BOOK ';
+const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOKs';
 
-const initialState = [];
+const initialState = [
+  {
+    title: 'The Hunger Games',
+    author: 'Suzanne Collins',
+    id: 1,
+  },
+  {
+    title: 'Dune',
+    author: 'Frank Herbert',
+    id: 2,
+  },
+  {
+    title: 'Capital in Twenty-First Century',
+    author: 'Suzanne Collins',
+    id: 3,
+  },
+  {
+    title: 'What the wise man fear',
+    author: 'William SheckSpear',
+    id: 4,
+  },
+];
 
-// actions' creator
-export const addBook = (book) => ({
+export const addBook = (NewBook) => ({
   type: ADD_BOOK,
-  payload: book,
+  payload: NewBook,
 });
 
-export const removeBook = () => ({
+export const removeBook = (id) => ({
   type: REMOVE_BOOK,
+  id,
 });
 
-const bookReducer = (state = initialState, action) => {
+const BookReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOK:
-      return [...state, action.payload];
+      return [
+        ...state,
+        {
+          id: Math.random(),
+          title: action.payload.title,
+          author: action.payload.author,
+        },
+      ];
     case REMOVE_BOOK:
-      return [...state.filter((book) => book !== action.payload)];
+      return state.filter((book) => book.id !== action.id);
     default:
       return state;
   }
 };
 
-export default bookReducer;
+export default BookReducer;
